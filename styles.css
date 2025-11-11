@@ -1,0 +1,156 @@
+/* bharati-essentials-enhanced.css
+   Enhanced and more-accessible styling for the header, hero, and product cards.
+   Save as bharati-essentials-enhanced.css and link in <head>:
+   <link rel="stylesheet" href="bharati-essentials-enhanced.css">
+
+   Notes:
+   - keeps the same design direction but improves responsiveness, spacing, accessibility,
+     hover/interaction states, and visual hierarchy.
+   - replace or merge with your existing CSS rules as needed.
+*/
+:root{
+  /* color tokens */
+  --deep-blue: #08306b;    /* slightly richer */
+  --nav-dark: #072a55;
+  --accent: #0b66ff;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --bg: #f4f7fb;
+  --radius: 12px;
+  --shadow-sm: 0 6px 18px rgba(2,6,23,0.06);
+  --shadow-md: 0 12px 30px rgba(2,6,23,0.12);
+  --gap: 16px;
+  --container: 1180px;
+  --max-text-width: 720px;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#0f172a;
+  line-height:1.45;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+/* --- Top header --- */
+.top-header{background:linear-gradient(180deg,var(--deep-blue),var(--nav-dark));color:#fff}
+.top-inner{display:flex;align-items:center;gap:var(--gap);padding:14px 0}
+.brand-left{display:flex;align-items:center;gap:12px}
+.logo-img{width:40px;height:40px;background:rgba(255,255,255,0.06);border-radius:8px;display:inline-flex;align-items:center;justify-content:center}
+.brand-names{display:flex;flex-direction:column;line-height:1}
+.brand-small{font-size:13px;font-weight:600;opacity:0.95}
+.brand-large{font-size:22px;font-weight:800;letter-spacing:0.3px}
+
+/* Search */
+.search-area{flex:1;display:flex;justify-content:center;align-items:center}
+.search-input{
+  width:100%;max-width:640px;padding:10px 14px;border-radius:10px;border:0;outline:none;font-size:14px;background:rgba(255,255,255,0.08);color:white;transition:box-shadow .18s ease,background .18s ease
+}
+.search-input:focus{background:rgba(255,255,255,0.12);box-shadow:0 4px 18px rgba(11,102,255,0.08)}
+.icon-btn{background:transparent;border:0;color:white;font-size:18px;cursor:pointer;padding:8px}
+.icons-area{display:flex;gap:6px;align-items:center}
+
+/* nav row */
+.main-nav{background:linear-gradient(180deg,var(--nav-dark), #042545);border-top:1px solid rgba(255,255,255,0.03)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+.nav-list{display:flex;gap:12px;list-style:none;margin:0;padding:0;font-weight:600}
+.nav-item{color:rgba(216,227,255,0.95);padding:8px 10px;border-radius:8px;cursor:pointer;transition:background .15s ease,color .15s ease}
+.nav-item:hover{background:rgba(255,255,255,0.04)}
+.nav-item.active{background:rgba(255,255,255,0.06);color:#fff}
+.nav-right{color:rgba(216,227,255,0.95);font-weight:600}
+
+/* --- Hero --- */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:30px;padding:36px 0;align-items:center}
+.eyebrow{color:var(--muted);font-weight:700;margin-bottom:8px}
+.hero-title{margin:0;font-size:40px;color:var(--deep-blue);font-weight:800;line-height:1.05}
+.hero-desc{color:var(--muted);max-width:var(--max-text-width);margin-top:12px}
+.hero-ctas{margin-top:18px;display:flex;gap:12px}
+.btn{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:700;cursor:pointer}
+.btn.outline{background:transparent;border:2px solid rgba(11,102,255,0.12);color:var(--deep-blue)}
+.btn.primary{background:var(--deep-blue)}
+
+/* hero right illustration */
+.hero-right .hero-illustration{background:linear-gradient(180deg,#fff,#fbfdff);padding:14px;border-radius:12px;box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center}
+.hero-illustration img{max-width:100%;height:180px;object-fit:cover;border-radius:8px}
+
+/* subtle floating animation to add life - prefers-reduced-motion respects user choice */
+@media (prefers-reduced-motion: no-preference){
+  .hero-illustration{transform-origin:center;animation:float 6s ease-in-out infinite}
+  @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+}
+
+/* --- Featured / Products --- */
+.featured{padding:26px 0}
+.featured-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.featured-head h2{margin:0;color:var(--deep-blue)}
+.sort-area select {
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #d0d7e2;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.muted{color:var(--muted);margin-top:8px}
+
+/* Product grid improvements: responsive masonry-like feel using auto-fit */
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.product-card{background:var(--card);border-radius:12px;padding:0;box-shadow:var(--shadow-sm);overflow:hidden;border:1px solid rgba(11,102,255,0.03);transition:transform .18s ease,box-shadow .18s ease}
+.product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+
+.product-imgwrap{position:relative;height:200px;background:linear-gradient(180deg,#fbfdff,#f1f6fb);display:flex;align-items:center;justify-content:center;padding:12px}
+.product-imgwrap img{max-width:92%;max-height:92%;object-fit:contain;transition:transform .25s ease}
+.product-card:hover .product-imgwrap img{transform:scale(1.03)}
+
+/* ribbon with better contrast and subtle shadow */
+.ribbon{position:absolute;left:16px;top:16px;background:#fff6ed;color:#9a3412;padding:6px 10px;border-radius:999px;font-weight:800;font-size:13px;box-shadow:0 6px 18px rgba(154,52,18,0.06)}
+
+.product-body{padding:16px}
+.product-title{margin:0;font-weight:800;color:var(--deep-blue);font-size:16px}
+.product-desc{color:var(--muted);margin:8px 0 12px;font-size:13px}
+.product-meta{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.price{font-weight:900;color:var(--deep-blue);font-size:18px}
+.product-actions{display:flex;gap:8px}
+.btn.small{padding:6px 10px;font-size:14px;border-radius:8px}
+
+/* helper: small badges inside cards */
+.badge{display:inline-block;padding:6px 8px;border-radius:999px;font-weight:700;font-size:12px;background:linear-gradient(180deg,#fff,#fbfbff);border:1px solid rgba(11,102,255,0.06)}
+
+/* Footer */
+.site-footer{padding:24px 0;color:var(--muted);font-size:13px;border-top:1px solid #e8eef7;margin-top:32px;text-align:center}
+
+/* Accessibility: focus styles */
+a:focus,button:focus,input:focus{outline:3px solid rgba(11,102,255,0.14);outline-offset:2px}
+
+/* Micro layout utilities (optional to use) */
+.flex{display:flex}
+.center{display:flex;align-items:center;justify-content:center}
+.stack{display:flex;flex-direction:column;gap:8px}
+
+/* Responsive tweaks */
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr 320px}
+  .hero-illustration img{height:160px}
+}
+@media (max-width:800px){
+  .brand-large{font-size:18px}
+  .hero{grid-template-columns:1fr}
+  .hero-right{order:-1}
+  .hero-illustration img{height:140px}
+}
+@media (max-width:480px){
+  .search-input{max-width:100%}
+  .product-imgwrap{height:160px}
+  .product-title{font-size:15px}
+}
+
+/* optional: reduced-contrast theme (for email previews) */
+.dark-weak .product-card{border-color:transparent;box-shadow:none}
+
+/* End of file */
+

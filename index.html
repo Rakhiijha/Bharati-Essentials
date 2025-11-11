@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bharati Essentials</title>
+
+  <!-- Google font to match the bold clean header -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top blue header -->
+  <header class="top-header">
+    <div class="container top-inner">
+      <div class="brand-left">
+        <img src="logo.png.png" alt="" class="logo-img" id="logoImg">
+        <div class="brand-names">
+          
+          <div class="brand-large">Bharati Essentials</div>
+        </div>
+      </div>
+
+      <div class="search-area">
+        <input type="search" placeholder="Search products, e.g. Multani Mitti, Oil..." aria-label="Search" class="search-input">
+        <button class="icon-btn search-btn" aria-hidden="true">🔍</button>
+      </div>
+
+      <div class="icons-area">
+        <button class="icon-btn" title="Account">👤</button>
+        <button class="icon-btn" title="Cart">🛒</button>
+      </div>
+    </div>
+
+    <!-- secondary nav row -->
+    <nav class="main-nav">
+      <div class="container nav-inner">
+        <ul class="nav-list">
+          <li class="nav-item active">All</li>
+          <li class="nav-item">Home</li>
+          <li class="nav-item">Organic Kapoor</li>
+          <li class="nav-item">Multani Mitti</li>
+        </ul>
+        <div class="nav-right">Contact</div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <div class="eyebrow">Trusted • Affordable • Home-made feel</div>
+        <h1 class="hero-title">Bharati Essentials</h1>
+        
+       <p class="hero-desc">Rooted in purity, crafted for today — organic Kapoor and natural Multani Mitti for home and self-care.</p>
+      
+        <div class="hero-ctas">
+          <button class="btn primary">Shop Now</button>
+          <button class="btn outline">Message Us</button>
+        </div>
+      </div>
+
+     
+    </section>
+
+    <!-- Featured products -->
+    <section class="featured">
+      <div class="featured-head">
+        <h2>Featured Products</h2>
+        <div class="sort-area">
+          <label for="sort">Sort:</label>
+          <select id="sort" class="sort-select"><option>Featured</option><option>Price: Low → High</option></select>
+        </div>
+      </div>
+
+      <p class="muted">High quality essentials — clear pricing & fast replies</p>
+
+      <div class="products-grid">
+        <!-- Single Kapoor product card -->
+        <article class="product-card">
+          <div class="product-imgwrap">
+            <img src="kapoor.png (2).png" alt="Kapoor (Camphor) 50g">
+            <div class="ribbon">₹99</div>
+          </div>
+
+          <div class="product-body">
+            <h3 class="product-title">Kapoor (Camphor) 50g</h3>
+            <p class="product-desc">Pure organic kapoor perfect for puja and household use. Handmade small-batch packaging.</p>
+            <div class="product-meta">
+              <div class="price">₹99</div>
+              <div class="product-actions">
+                <button class="btn small primary">Add</button>
+                <button class="btn small outline">View</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- you can duplicate the article.product-card to add more products -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Bharati Essentials — Made with care</div>
+  </footer>
+<a href="checkout.html"></a>
+  <script src="script.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="checkout.js"></script>
+
+</body>
+</html>
